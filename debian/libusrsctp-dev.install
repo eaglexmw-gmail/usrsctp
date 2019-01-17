@@ -1,2 +1,2 @@
 usr/include/*.h
-usr/lib/*/*.so
+usr/lib/*.a

@@ -49,7 +49,8 @@ SET (prefix ${CMAKE_INSTALL_PREFIX})
 SET (exec_prefix "\${prefix}")
 SET (libdir "\${exec_prefix}/lib")
 SET (includedir "\${prefix}/include/usrsctp")
-
+set(CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -D__FILENAME__='\"$(subst ${CMAKE_SOURCE_DIR}/usrsctplib/netinet/,,$(abspath $<))\"'")
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 #include_directories(netinet netinet6)
 
@@ -197,7 +198,7 @@ endif()
 
 option(WERROR "Warning as error" ON)
 
-include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/netinet ${PROJECT_SOURCE_DIR}/netinet6)
+include_directories(${PROJECT_SOURCE_DIR}/usrsctplib ${PROJECT_SOURCE_DIR}/usrsctplib/netinet ${PROJECT_SOURCE_DIR}/usrsctplib/netinet6)
 
 LIST (APPEND usrsctp_root_HEADERS
 user_atomic.h       user_inpcb.h    user_ip_icmp.h  user_mbuf.h   user_recv_thread.h  user_socketvar.h  usrsctp.h

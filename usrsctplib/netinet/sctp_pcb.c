@@ -7317,7 +7317,7 @@ sctp_load_addresses_from_init(struct sctp_tcb *stcb, struct mbuf *m,
 
 							/* in setup state we abort this guy */
 							snprintf(msg, sizeof(msg),
-							         "%s:%d at %s", __FILE__, __LINE__, __func__);
+							         "%s:%d at %s", __FILENAME__, __LINE__, __func__);
 							op_err = sctp_generate_cause(SCTP_BASE_SYSCTL(sctp_diag_info_code),
 							         msg);
 							sctp_abort_an_association(stcb_tmp->sctp_ep,
@@ -7411,7 +7411,7 @@ sctp_load_addresses_from_init(struct sctp_tcb *stcb, struct mbuf *m,
 
 							/* in setup state we abort this guy */
 							snprintf(msg, sizeof(msg),
-							         "%s:%d at %s", __FILE__, __LINE__, __func__);
+							         "%s:%d at %s", __FILENAME__, __LINE__, __func__);
 							op_err = sctp_generate_cause(SCTP_BASE_SYSCTL(sctp_diag_info_code),
 							         msg);
 							sctp_abort_an_association(stcb_tmp->sctp_ep,
